@@ -3,7 +3,7 @@
 BaseModel is the base class for all other classes
 """
 from datetime import datetime
-import models
+# import models
 import uuid
 
 
