@@ -3,8 +3,8 @@
 BaseModel is the base class for all other classes
 """
 from datetime import datetime
-# import models
-import uuid
+import models
+from uuid import uuid4
 
 
 class BaseModel():
@@ -13,11 +13,6 @@ class BaseModel():
 
     def __init__(self, *args, **kwargs):
         """ Constructor for base class """
-        '''
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
-	'''
         if len(kwargs) > 0:
             for k, v in kwargs.items():
                 if k != "__class__":
@@ -25,9 +20,10 @@ class BaseModel():
                         v = datetime.strptime(v, '%Y-%m-%dT%H:%M:%S.%f')
                     setattr(self, k, v)
         else:
-            self.id = str(uuid.uuid4())
+            self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """ Print string representation of object """
@@ -39,6 +35,8 @@ class BaseModel():
     def save(self):
         """ Updates 'updated_at' with current datetime """
         self.updated_at = datetime.now()
+        models.storage.new(self)
+        models.storage.save()
 
     def to_dict(self):
         """ Return dict containing all keys/values of __dict__ """
