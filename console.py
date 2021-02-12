@@ -64,6 +64,28 @@ class HBNBCommand(cmd.Cmd):
             else:
                 HBNBCommand.error_helper(2)
 
+    def do_all(self, items):
+        """Print string representation of all instances"""
+        new_list = []
+        args = items.split()
+        warehouse = models.storage.all()
+
+        if len(args) == 0:
+            for inst in warehouse.keys():
+                obj = warehouse[inst]
+                new_list.append(str(obj))
+            print(new_list)
+        else:
+            if HBNBCommand.validate(args[0]):
+                models.storage.reload()
+                for inst in warehouse.keys():
+                    if (args[0] in inst):
+                        obj = warehouse[inst]
+                        new_list.append(str(obj))
+                print(new_list)
+            else:
+                HBNBCommand.error_helper(2)
+
     def do_quit(self, *args):
         """Quit command to exit the program """
         return True
