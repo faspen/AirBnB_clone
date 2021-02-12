@@ -27,8 +27,8 @@ class BaseModel():
 
     def __str__(self):
         """ Print string representation of object """
-        string = "[" + str(self.__class__.__name__) + "]"
-        string += "(" + str(self.id) + ")"
+        string = "[" + str(self.__class__.__name__) + "] "
+        string += "(" + str(self.id) + ") "
         string += str(self.__dict__)
         return string
 
