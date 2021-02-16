@@ -48,7 +48,7 @@ The AirBnB project is a mega-project divided into seven seperate ones:
 
 ## How to Use
 
-**Startup**
+**- Startup -**
 
 First, clone this repository with the following command:
 
@@ -70,7 +70,7 @@ When you run this command you should see the prompt:
 
 Once you see this, you are now ready to use the console.
 
-**Commands**
+**- Commands -**
 
 The purpose of the AirBnB console is to create, manipulate, and destroy different objects. The table below contains the different objects you can interact with.
 
@@ -136,4 +136,13 @@ Here is how you use each of the different commands:
 (hbnb) update User 16cd9638-b240-4f0e-9b4a-e035b5dcfb57 first_name "Betty"
 [User] (16cd9638-b240-4f0e-9b4a-e035b5dcfb57) {'created_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955297), 'id': '16cd9638-b240-4f0e-9b4a-e035b5dcfb57', 'first_name': 'Betty', 'updated_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955474)}
 (hbnb) show User 16cd9638-b240-4f0e-9b4a-e035b5dcfb57
+```
+
+**- Quitting -**
+
+When you want to exit the console you can either input CTRL+D or type "quit".
+
+```Shell
+(hbnb) quit
+$
 ```
