@@ -61,3 +61,24 @@ Once the repository is cloned, change directories and execute the file:
 ```shell
 ./console
 ```
+
+When you run this command you should see the prompt:
+
+```shell
+(hbnb)
+```
+
+Once you see this, you are now ready to use the console.
+
+**Commands**
+
+The purpose of the AirBnB console is to create, manipulate, and destroy different objects. The table below contains the different objects you can interact with.
+
+| Class | Attributes |
+| BaseModel | id, created_at, updated_at |
+| User | email, password, first_name, last_name |
+| State | name |
+| City | state_id, name |
+| Amenity | name |
+| Place | city_id, user_id, name, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids |
+| Review | place_id, user_id, text |
