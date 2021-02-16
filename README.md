@@ -52,4 +52,12 @@ The AirBnB project is a mega-project divided into seven seperate ones:
 
 First, clone this repository with the following command:
 
-```git clone https://github.com/faspen/AirBnB_clone```
+```shell
+git clone https://github.com/faspen/AirBnB_clone
+```
+
+Once the repository is cloned, change directories and execute the file:
+
+```shell
+./console
+```
