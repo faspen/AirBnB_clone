@@ -99,5 +99,24 @@ Here is how you use each of the different commands:
 * create - to create an instance, type "create" followed by a class name. This will create an instance of that class and display its id.
 
 ```shell
-create BaseModel
+(hbnb) create User
 16cd9638-b240-4f0e-9b4a-e035b5dcfb57
+```
+
+* show - in order to show an instance, you must type "show" followed by the class name of the instance, followed by the instance's id.
+
+```shell
+(hbnb) show User 16cd9638-b240-4f0e-9b4a-e035b5dcfb57
+[User] (16cd9638-b240-4f0e-9b4a-e035b5dcfb57) {'id': '16cd9638-b240-4f0e-9b4a-e035b5dcfb57', 'created_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955297), 'updated_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955474)}
+```
+
+* destroy - to delete an instance, type "delete" followed by the class name of the instance, followed by the instance's id.
+
+```shell
+(hbnb) destroy User 16cd9638-b240-4f0e-9b4a-e035b5dcfb57
+(hbnb)
+(hbnb) show User 16cd9638-b240-4f0e-9b4a-e035b5dcfb57
+** no instance found **
+```
+
+* all -
