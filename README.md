@@ -46,3 +46,10 @@ The AirBnB project is a mega-project divided into seven seperate ones:
 
 * load objects from the client side by using your own RESTful API
 
+## How to Use
+
+**Startup**
+
+First, clone this repository with the following command:
+
+'''git clone https://github.com/faspen/AirBnB_clone'''
