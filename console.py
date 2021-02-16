@@ -21,7 +21,7 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, args):
         """Create method instance """
         if len(args) is 0:
-            HBNBCommand.error_helper(1)
+            print("** class name missing **")
         else:
             toks = args.split()
             if HBNBCommand.validate(toks[0]):
@@ -29,16 +29,16 @@ class HBNBCommand(cmd.Cmd):
                 print(new.id)
                 new.save()
             else:
-                HBNBCommand.error_helper(2)
+                print("** class doesn't exist **")
 
     def do_show(self, items):
         """Show string representation of instance """
         args = items.split()
 
         if len(args) is 0:
-            HBNBCommand.error_helper(1)
+            print("** class name missing **")
         elif len(args) is 1:
-            HBNBCommand.error_helper(3)
+            print("** instance id missing **")
         else:
             if HBNBCommand.validate(args[0]):
                 models.storage.reload()
@@ -46,18 +46,18 @@ class HBNBCommand(cmd.Cmd):
                 if k in list(models.storage.all().keys()):
                     print(models.storage.all()[k])
                 else:
-                    HBNBCommand.error_helper(4)
+                    print("** no instance found **")
             else:
-                HBNBCommand.error_helper(2)
+                print("** class doesn't exist **")
 
     def do_destroy(self, items):
         """Destroy an instance """
         args = items.split()
 
         if len(args) is 0:
-            HBNBCommand.error_helper(1)
+            print("** class name missing **")
         elif len(args) is 1:
-            HBNBCommand.error_helper(3)
+            print("** instance id missing **")
         else:
             if HBNBCommand.validate(args[0]):
                 k = args[0] + "." + args[1]
@@ -65,9 +65,9 @@ class HBNBCommand(cmd.Cmd):
                     del models.storage.all()[k]
                     models.storage.save()
                 else:
-                    HBNBCommand.error_helper(4)
+                    print("** no instance found **")
             else:
-                HBNBCommand.error_helper(2)
+                print("** class doesn't exist **")
 
     def do_all(self, items):
         """Print string representation of all instances"""
@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
                         new_list.append(str(obj))
                 print(new_list)
             else:
-                HBNBCommand.error_helper(2)
+                print("** class doesn't exist **")
 
     def do_update(self, items):
         """Update an instance"""
@@ -97,21 +97,21 @@ class HBNBCommand(cmd.Cmd):
         warehouse = models.storage.all()
 
         if len(args) is 0:
-            HBNBCommand.error_helper(1)
+            print("** class name missing **")
         elif (HBNBCommand.validate(args[0])):
             if not issubclass(eval(args[0]), BaseModel):
-                HBNBCommand.error_helper(2)
+                print("** class doesn't exist **")
             else:
                 if len(args) is 1:
-                    HBNBCommand.error_helper(3)
+                    print("** instance id missing **")
                 else:
                     k = args[0] + "." + args[1]
                     if k in warehouse:
                         if len(args) is 2:
-                            HBNBCommand.error_helper(5)
+                            print("** attribute name missing **")
                         else:
                             if len(qargs) is 1:
-                                HBNBCommand.error_helper(6)
+                                print("** value missing **")
                             else:
                                 setattr(
                                     warehouse[k],
@@ -120,9 +120,9 @@ class HBNBCommand(cmd.Cmd):
                                 )
                                 models.storage.save()
                     else:
-                        HBNBCommand.error_helper(4)
+                        print("** no instance found **")
         else:
-            HBNBCommand.error_helper(2)
+            print("** class doesn't exist **")
 
     def do_quit(self, *args):
         """Quit command to exit the program """
@@ -146,21 +146,6 @@ class HBNBCommand(cmd.Cmd):
             return True
         else:
             return False
-
-    def error_helper(err_num):
-        """ Handle errors """
-        if err_num is 1:
-            print("** class name missing **")
-        elif err_num is 2:
-            print("** class doesn't exist **")
-        elif err_num is 3:
-            print("** instance id missing **")
-        elif err_num is 4:
-            print("** no instance found **")
-        elif err_num is 5:
-            print("** attribute name missing **")
-        else:
-            print("** value missing **")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
