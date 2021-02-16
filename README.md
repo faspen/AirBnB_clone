@@ -83,3 +83,21 @@ The purpose of the AirBnB console is to create, manipulate, and destroy differen
 | Amenity | name |
 | Place | city_id, user_id, name, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids |
 | Review | place_id, user_id, text |
+
+The table below shows all available commands and their uses.
+
+| Command | Action |
+| ------ | ------ |
+| create | create a class instance |
+| show | displays information of a given instance |
+| destroy | Delete an instance |
+| all | display all instances of a class or all instances of all classes |
+| update | update attributes of a class |
+
+Here is how you use each of the different commands:
+
+* create - to create an instance, type "create" followed by a class name. This will create an instance of that class and display its id.
+
+```shell
+create BaseModel
+16cd9638-b240-4f0e-9b4a-e035b5dcfb57
