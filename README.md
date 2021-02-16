@@ -75,6 +75,7 @@ Once you see this, you are now ready to use the console.
 The purpose of the AirBnB console is to create, manipulate, and destroy different objects. The table below contains the different objects you can interact with.
 
 | Class | Attributes |
+| ------ | ------ |
 | BaseModel | id, created_at, updated_at |
 | User | email, password, first_name, last_name |
 | State | name |
