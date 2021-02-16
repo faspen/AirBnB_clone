@@ -119,4 +119,21 @@ Here is how you use each of the different commands:
 ** no instance found **
 ```
 
-* all -
+* all - to display all instances, simply type "all". To display all instances of a specific class, type "all" followed by the class name.
+
+```shell
+(hbnb) all
+["[User] (6c6976e4-97d4-4f60-99ae-c948fc2cfd15) {'updated_at': datetime.datetime(2021, 2, 16, 17, 48, 13, 24922), 'id': '6c6976e4-97d4-4f60-99ae-c948fc2cfd15', 'created_at': datetime.datetime(2021, 2, 16, 17, 48, 13, 24663)}", "[User] (16cd9638-b240-4f0e-9b4a-e035b5dcfb57) {'updated_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955474), 'id': '16cd9638-b240-4f0e-9b4a-e035b5dcfb57', 'created_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955297)}", "[BaseModel] (7e43e47e-e771-4b48-a8a1-83142d7f6788) {'updated_at': datetime.datetime(2021, 2, 12, 2, 17, 0, 296464), 'id': '7e43e47e-e771-4b48-a8a1-83142d7f6788', 'created_at': datetime.datetime(2021, 2, 12, 2, 17, 0, 296419)}"]
+(hbnb) all User
+["[User] (6c6976e4-97d4-4f60-99ae-c948fc2cfd15) {'updated_at': datetime.datetime(2021, 2, 16, 17, 48, 13, 24922), 'id': '6c6976e4-97d4-4f60-99ae-c948fc2cfd15', 'created_at': datetime.datetime(2021, 2, 16, 17, 48, 13, 24663)}", "[User] (16cd9638-b240-4f0e-9b4a-e035b5dcfb57) {'updated_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955474), 'id': '16cd9638-b240-4f0e-9b4a-e035b5dcfb57', 'created_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955297)}"]
+```
+
+* update - updating an instance requires you to type "update", followed by the class name and instance id, followed by the attribute you would like to update, followed by the value.
+
+```shell
+(hbnb) show User 16cd9638-b240-4f0e-9b4a-e035b5dcfb57
+[User] (16cd9638-b240-4f0e-9b4a-e035b5dcfb57) {'created_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955297), 'id': '16cd9638-b240-4f0e-9b4a-e035b5dcfb57', 'updated_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955474), 'first_name': 'Finn'}
+(hbnb) update User 16cd9638-b240-4f0e-9b4a-e035b5dcfb57 first_name "Betty"
+[User] (16cd9638-b240-4f0e-9b4a-e035b5dcfb57) {'created_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955297), 'id': '16cd9638-b240-4f0e-9b4a-e035b5dcfb57', 'first_name': 'Betty', 'updated_at': datetime.datetime(2021, 2, 16, 17, 38, 32, 955474)}
+(hbnb) show User 16cd9638-b240-4f0e-9b4a-e035b5dcfb57
+```
