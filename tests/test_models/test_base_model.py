@@ -23,6 +23,11 @@ class TestBaseModel(unittest.TestCase):
     def test_id(self):
         """ Test id """
         b1 = BaseModel()
+        self.assertEqual(b1.id, b1.id)
+        self.assertEqual(b1.created_at, b1.created_at)
+        self.assertEqual(b1.updated_at, b1.updated_at)
+        self.assertEqual(str(b1), str(b1))
+        self.assertDictEqual(b1.to_dict(), b1.to_dict())
         b2 = BaseModel()
         self.assertNotEqual(b1.id, b2.id)
 
@@ -56,6 +61,22 @@ class TestBaseModel(unittest.TestCase):
         b1.save()
         self.assertTrue(hasattr(b1, 'updated_at'))
         self.assertNotEqual(b1.created_at, b1.updated_at)
+
+    def test_kwargs(self):
+        """ Test kwargs """
+        dic = {"created_at": "2021-02-17T17:13:24.152743",
+        "id": "4d8fdd8d-e69d-448e-acd7-3e681d7d8e19",
+        "updated_at": "2021-02-17T17:13:24.152752"}
+
+        b1 = BaseModel(**dic)
+
+        self.assertEqual(b1.id, "4d8fdd8d-e69d-448e-acd7-3e681d7d8e19")
+        self.assertEqual(b1.created_at, datetime(2021, 2, 17, 17, 13, 24, 152743))
+        self.assertEqual(b1.updated_at, datetime(2021, 2, 17, 17, 13, 24, 152752))
+        self.assertEqual(str(b1), str(b1))
+        b1.save()
+        self.assertEqual(b1.updated_at, b1.updated_at)
+        self.assertEqual(b1.__class__, type(b1))
 
 if __name__ == '__main__':
     unittest.main()
