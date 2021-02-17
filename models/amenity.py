@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Amenity module"""
+"""This is the Amenity module"""
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
 
-    """Amenity class"""
+    """This is the Amenity class"""
 
     name = ""

@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Place module"""
+"""This is the Place module"""
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """ Place class """
+    """ This is the Place class """
 
     city_id = ""
     user_id = ""
