@@ -13,6 +13,11 @@ class TestState(unittest.TestCase):
         """see if instances exits"""
         self.assertTrue(hasattr(State, "name"))
 
+    def test_attributes(self):
+        """ Test default values """
+	s1 = State()
+	self.assertEqual(s1.name, "")
+
     def test_id(self):
         """Test id"""
         s1 = State()
