@@ -27,3 +27,6 @@ class TestPlace(unittest.TestCase):
     def test_doc(self):
         """ Test doc """
         self.assertIsNotNone(Place.__doc__)
+
+if __name__ == '__main__':
+    unittest.main()

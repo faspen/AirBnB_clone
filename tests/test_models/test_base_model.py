@@ -55,3 +55,6 @@ class TestBaseModel(unittest.TestCase):
         b1.save()
         self.assertTrue(hasattr(b1, 'updated_at'))
         self.assertNotEqual(b1.created_at, b1.updated_at)
+
+if __name__ == '__main__':
+    unittest.main()

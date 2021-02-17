@@ -28,3 +28,6 @@ class TestCity(unittest.TestCase):
     def test_doc(self):
         """ Test doc """
         self.assertIsNotNone(City.__doc__)
+
+if __name__ == '__main__':
+    unittest.main()
