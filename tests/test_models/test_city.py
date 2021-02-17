@@ -1,4 +1,5 @@
 #!/user/bin/python3
+""" Module containing city tests """
 from models.base_model import BaseModel
 from models.city import City
 import unittest

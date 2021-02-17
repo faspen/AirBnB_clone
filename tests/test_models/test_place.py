@@ -1,4 +1,5 @@
 #!/user/bin/python3
+""" This module contains tests for place """
 from models.base_model import BaseModel
 from models.place import Place
 import unittest

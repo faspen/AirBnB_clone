@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" This module contains base model tests """
 from models.base_model import BaseModel
 import unittest
 from datetime import datetime

@@ -1,4 +1,5 @@
 #!/user/bin/python3
+""" This module contains amenity tests """
 from models.base_model import BaseModel
 from models.amenity import Amenity
 import unittest

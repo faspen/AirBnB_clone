@@ -1,4 +1,5 @@
 #!/user/bin/python3
+""" This module contains test for state """
 from models.base_model import BaseModel
 from models.state import State
 import unittest

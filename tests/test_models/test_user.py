@@ -1,4 +1,5 @@
 #!/user/bin/python3
+""" This module contains tests for user """
 from models.base_model import BaseModel
 from models.user import User
 import unittest
