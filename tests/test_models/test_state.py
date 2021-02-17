@@ -15,8 +15,8 @@ class TestState(unittest.TestCase):
 
     def test_attributes(self):
         """ Test default values """
-	s1 = State()
-	self.assertEqual(s1.name, "")
+        s1 = State()
+        self.assertEqual(s1.name, "")
 
     def test_id(self):
         """Test id"""
