@@ -29,6 +29,8 @@ class TestUser(unittest.TestCase):
         u1 = User()
         self.assertEqual(u1.first_name, "")
         self.assertEqual(u1.last_name, "")
+        self.assertEqual(u1.email, "")
+        self.assertEqual(u1.password, "")
 
     def test_attr(self):
         """ Test naming """
