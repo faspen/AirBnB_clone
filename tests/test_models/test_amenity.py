@@ -13,6 +13,11 @@ class TestAmenity(unittest.TestCase):
         """ See if instances exist """
         self.assertTrue(hasattr(Amenity, "name"))
 
+    def test_attributes(self):
+        """ Test default values """
+        a1 = Amenity()
+        self.assertEqual(a1.name, "")
+
     def test_id(self):
         """ Test id """
         a1 = Amenity()

@@ -65,14 +65,30 @@ class TestBaseModel(unittest.TestCase):
     def test_kwargs(self):
         """ Test kwargs """
         dic = {"created_at": "2021-02-17T17:13:24.152743",
-        "id": "4d8fdd8d-e69d-448e-acd7-3e681d7d8e19",
-        "updated_at": "2021-02-17T17:13:24.152752"}
+               "id": "4d8fdd8d-e69d-448e-acd7-3e681d7d8e19",
+               "updated_at": "2021-02-17T17:13:24.152752"}
 
         b1 = BaseModel(**dic)
 
         self.assertEqual(b1.id, "4d8fdd8d-e69d-448e-acd7-3e681d7d8e19")
-        self.assertEqual(b1.created_at, datetime(2021, 2, 17, 17, 13, 24, 152743))
-        self.assertEqual(b1.updated_at, datetime(2021, 2, 17, 17, 13, 24, 152752))
+        self.assertEqual(
+            b1.created_at,
+            datetime(2021,
+                     2,
+                     17,
+                     17,
+                     13,
+                     24,
+                     152743))
+        self.assertEqual(
+            b1.updated_at,
+            datetime(2021,
+                     2,
+                     17,
+                     17,
+                     13,
+                     24,
+                     152752))
         self.assertEqual(str(b1), str(b1))
         b1.save()
         self.assertEqual(b1.updated_at, b1.updated_at)

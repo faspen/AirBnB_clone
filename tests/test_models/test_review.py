@@ -13,6 +13,13 @@ class TestReview(unittest.TestCase):
         """ See if instances exist """
         self.assertTrue(hasattr(Review, "text"))
 
+    def test_attributes(self):
+        """ Test default values """
+        r1 = Review()
+        self.assertEqual(r1.place_id, "")
+        self.assertEqual(r1.user_id, "")
+        self.assertEqual(r1.text, "")
+
     def test_id(self):
         """ Test id """
         r1 = Review()

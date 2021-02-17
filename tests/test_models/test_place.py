@@ -13,6 +13,21 @@ class TestPlace(unittest.TestCase):
         """ See if instances exist """
         self.assertTrue(hasattr(Place, "name"))
 
+    def test_attributes(self):
+        """ Test default values """
+        p1 = Place()
+        self.assertEqual(p1.city_id, "")
+        self.assertEqual(p1.user_id, "")
+        self.assertEqual(p1.name, "")
+        self.assertEqual(p1.description, "")
+        self.assertEqual(p1.number_rooms, 0)
+        self.assertEqual(p1.number_bathrooms, 0)
+        self.assertEqual(p1.max_guest, 0)
+        self.assertEqual(p1.price_by_night, 0)
+        self.assertEqual(p1.latitude, 0.0)
+        self.assertEqual(p1.longitude, 0.0)
+        self.assertEqual(p1.amenity_ids, [])
+
     def test_id(self):
         """ Test id """
         p1 = Place()
