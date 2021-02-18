@@ -3,11 +3,22 @@
 from models.base_model import BaseModel
 import unittest
 from datetime import datetime
+import pep8
 
 
 class TestBaseModel(unittest.TestCase):
 
     """ Test BaseModel Class """
+
+    def test_pep8(self):
+        """ Test pep8 format """
+        style = pep8.StyleGuide(quiet=True)
+        f1 = 'models/base_model.py'
+        f2 = 'tests/test_models/test_base_model.py'
+
+        check = style.check_files((f1, f2))
+        err = "Code format errors found"
+        self.assertEqual(check.total_errors, 0, err)
 
     def test_existence(self):
         """ See if instances exist """
@@ -15,10 +26,14 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(hasattr(BaseModel, "to_dict"))
         self.assertTrue(hasattr(BaseModel, "__init__"))
         self.assertTrue(hasattr(BaseModel, "__str__"))
+        b1 = BaseModel()
+        self.assertIsInstance(b1, BaseModel)
 
     def test_doc(self):
         """ Test doc """
         self.assertIsNotNone(BaseModel.__doc__)
+        for func in dir(BaseModel):
+            self.assertTrue(len(func.__doc__) > 0)
 
     def test_id(self):
         """ Test id """
