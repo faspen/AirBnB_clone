@@ -109,5 +109,13 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(b1.updated_at, b1.updated_at)
         self.assertEqual(b1.__class__, type(b1))
 
+    def test_rep(self):
+        """ Test string rep """
+        str = "[{}] ({}) {}".format(
+            self.__class__.__name__,
+            self.id,
+            self.__dict__)
+        self.assertTrue(str)
+
 if __name__ == '__main__':
     unittest.main()
