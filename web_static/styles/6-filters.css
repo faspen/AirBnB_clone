@@ -5,6 +5,7 @@
 	border: 1px #DDDDDD;
 	border-style: solid;
 	border-radius: 4px;
+	display: flex;
 }
 
 .filters button {
@@ -35,11 +36,13 @@
 .filters .locations h3, .filters .amenities h3 {
 	font-weight: 600;
 	padding-left: 30px;
+	margin-bottom: 5px;
 }
 
 .filters .locations h4, .filters .amenities h4 {
 	font-weight: 400;
 	padding-left: 30px;
+	margin-bottom: 5px;
 }
 
 .popover {
@@ -64,6 +67,7 @@
 
 .popover li {
 	list-style: none;
+	margin: 5px;
 }
 
 .filters .locations:hover .popover {

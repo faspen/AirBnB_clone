@@ -8,6 +8,8 @@
 	font-size: 30px;
 	text-align: left;
 	vertical-align: top;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 .places > article {
@@ -20,4 +22,5 @@
 
 .places > article > h2 {
 	font-size: 30px;
+	text-align: center;
 }
